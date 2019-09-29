@@ -14,6 +14,8 @@ upcase.o : upcase.s
 main : main.o
 	gcc main.o -o main
 	objdump main.o -D -M intel > main.objdump.s
+	objdump main -d -M intel > main.exe.s
+
 main.o : main.s
 	gcc -c main.s -o main.o
 main.s : main.c
