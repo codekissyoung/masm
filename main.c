@@ -1,20 +1,32 @@
-int add( int a, int b )
-{
-	return a + b;
-}
+long long_var = 10;
+int int_var = 1;
+char ch = 'c';
+char *hello = "hello 中文 abc";
+int int_arr[] = { 19, 23, 34, 56, 67, 78 };
+
+long calc_area( long width, long height );
+long calc_area_price( long width, long height, long unit_price );
 
 int main ( )
 {
-	int sum = 10;
+	long width 	= 3;
+	long height = 4;
 
-	if( sum >= 10 )
-	{
-		return 1;
-	}
-	else
-	{
-		return 0;
-	}
+	long unit_price = 5;
 
-	return add( 4, 5 );
+	long price = calc_area_price( width, height, unit_price );
+
+	return (int)price;
+}
+
+long calc_area( long width, long height )
+{
+	return width * height;
+}
+
+long calc_area_price( long width, long height, long unit_price )
+{
+	long area = calc_area( width, height );
+	long price = area * unit_price;
+	return price;
 }

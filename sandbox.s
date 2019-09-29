@@ -4,6 +4,7 @@ section .data               ; 保存初始化的数据
     MyByte2 db 10H          ; 单字节
     MyWord dw 0FFFFH        ; 双字节
     MyDouble dd 0B8000000H  ; 4字节
+
     eatmsg: db "iwannayou!",10,"do you know?",10 ; 10 是 \n 的 ASSIC 的编码
     eatlen: equ $-eatmsg    ; 编译时计算 eatmsg 的长度，记住这种格式的用法即可
     snippet: db "KANGAROO",10
