@@ -13,13 +13,15 @@ upcase.o : upcase.s
 
 main : main.o
 	gcc main.o -o main
-	objdump main.o -D -M intel > main.objdump.s
+	objdump main.o -d -M intel > main.objdump.s
 	objdump main -d -M intel > main.exe.s
 
 main.o : main.s
-	gcc -c main.s -o main.o
+	gcc -g -c main.s -o main.o
+
 main.s : main.c
 	gcc -masm=intel -S main.c -o main.s
+
 clean:
 	$(RM) sandbox upcase *.o *.lst
-	$(RM) main.s main.objdump.s main
+	$(RM) main.s main.objdump.s main main.exe.s
