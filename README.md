@@ -1,3 +1,0 @@
-# masm
-
-Learn masm !
